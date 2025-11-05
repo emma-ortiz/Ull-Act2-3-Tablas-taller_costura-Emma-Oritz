@@ -664,6 +664,52 @@ admin.site.register(Inscripcion)
 {% endblock %}
 
 ```
+##ESTRUCTURA DE PROYECTO##
+```
+UIII_taller_costura_0306/
+├─ .venv/                         # Entorno virtual de Python
+│
+├─ manage.py                      # Archivo principal para ejecutar comandos Django
+│
+├─ backend_tallercostura/         # Carpeta del proyecto Django (backend)
+│  ├─ __init__.py
+│  ├─ asgi.py
+│  ├─ settings.py                 # Configuración principal del proyecto
+│  ├─ urls.py                     # Enrutador principal (enlaza con las apps)
+│  ├─ wsgi.py
+│
+├─ app_taller/                    # Aplicación principal del proyecto
+│  ├─ __init__.py
+│  ├─ admin.py                    # Registro de modelos en el panel de administración
+│  ├─ apps.py
+│  ├─ models.py                   # Modelos: Alumno, Clase, Inscripción
+│  ├─ views.py                    # Funciones CRUD (solo Alumno por ahora)
+│  ├─ urls.py                     # Rutas internas de la app_taller
+│  ├─ tests.py
+│  ├─ migrations/                 # Archivos automáticos de base de datos
+│  │  └─ __init__.py
+│  │
+│  ├─ templates/                  # Carpeta de plantillas HTML
+│  │  ├─ base.html                # Plantilla base con Bootstrap
+│  │  ├─ header.html              # Cabecera (si se usa)
+│  │  ├─ navbar.html              # Menú de navegación con íconos
+│  │  ├─ footer.html              # Pie de página con autor y fecha
+│  │  ├─ inicio.html              # Página principal del sistema
+│  │  │
+│  │  └─ alumno/                  # Subcarpeta con vistas de alumnos
+│  │      ├─ agregar_alumno.html
+│  │      ├─ ver_alumno.html
+│  │      ├─ actualizar_alumno.html
+│  │      └─ borrar_alumno.html
+│  │
+│  └─ static/                     # (Opcional) Carpeta para archivos estáticos: CSS, JS, imágenes
+│      ├─ css/
+│      ├─ js/
+│      └─ img/
+│
+└─ db.sqlite3                     # Base de datos SQLite (se crea después de migrar)
+
+```
 
 
 
